@@ -4,7 +4,7 @@ set -e
 if [[ "$EUID" -ne 0 ]]; then
 	echo "Sorry, this script must be ran as root"
 	echo "Maybe try this:"
-	echo "curl https://raw.githubusercontent.com/wg-dashboard/wg-dashboard/master/install_script.sh | sudo bash"
+	echo "curl https://raw.githubusercontent.com/picassio/wg-dashboard/master/install_script.sh | sudo bash"
 	exit
 fi
 
@@ -76,7 +76,7 @@ cd /opt
 rm -rf wg-dashboard
 rm -rf wg-dashboard.tar.gz
 # download wg-dashboard latest release
-curl -L https://github.com/$(wget https://github.com/wg-dashboard/wg-dashboard/releases/latest -O - | egrep '/.*/.*/.*tar.gz' -o) --output wg-dashboard.tar.gz
+curl -L https://github.com/$(wget https://github.com/picassio/wg-dashboard/releases/tag/v0.21.1 -O - | egrep '/.*/.*/.*tar.gz' -o) --output wg-dashboard.tar.gz
 # create directory for dashboard
 mkdir -p wg-dashboard
 # unzip wg-dashboard
@@ -176,14 +176,5 @@ echo ""
 echo "> Done! WireGuard and wg-dashboard have been successfully installed"
 echo "> You can now connect to the dashboard via ssh tunnel by visiting:"
 echo ""
-echo -e "\t\thttp://localhost:3000"
-echo ""
-echo "> You can open an ssh tunnel from your local machine with this command:"
-echo ""
-echo -e "\t\tssh -L 3000:localhost:3000 <your_vps_user>@<your_vps_ip>"
-echo ""
-echo "> Please save this command for later, as you will need it to access the dashboard"
-echo ""
-echo "=========================================================================="
-echo ""
+echo -e "\t\thttp://public-ip:3000"
 echo ""
