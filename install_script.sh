@@ -116,6 +116,8 @@ ufw --force enable
 ufw allow 58210
 # enable port 53 in firewall for dns
 ufw allow in on wg0 to any port 53
+# enable dashboard public
+ufw allow 3000
 
 # make and enter coredns folder
 mkdir -p /etc/coredns
