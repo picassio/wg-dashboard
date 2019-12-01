@@ -175,7 +175,7 @@ exports.deletePeer = (peer, cb) => {
 		}
 	);
 };
-/*
+
 exports.makeDashboardPrivate = (state, cb) => {
 	child_process.exec(
 		`ufw delete allow 3000 ; ufw deny in on ${state.server_config
@@ -200,7 +200,6 @@ exports.makeDashboardPrivate = (state, cb) => {
 		}
 	);
 };
-*/
 
 exports.makeDashboardPublic = (state, cb) => {
 	child_process.exec(
