@@ -31,27 +31,12 @@ Thanks to [Team Centric Software](http://tcs.de) for sponsoring initial developm
 
 With our install script all the needed packages for WireGuard and wg-dashboard will be installed. Just follow the given steps.
 
-1. Connect to your server and open a ssh tunnel from remote to local on port 3000
-	* `ssh -L 3000:localhost:3000 <your_vps_user>@<your_vps_ip>`
+1. Connect to your server:
+	* `ssh <your_vps_user>@<your_vps_ip>`
 2. Run the install script
 	* `curl https://raw.githubusercontent.com/picassio/wg-dashboard/master/install_script.sh | sudo bash`
-3. Go to [http://localhost:3000](http://localhost:3000) in your favorite browser
+3. Go to [http://your_vps_ip:3000](http://your_vps_ip:3000) in your favorite browser
 4. Enjoy
-
-#### Manual Install
-
-1. Connect to your VPS and open an ssh tunnel
-	* `ssh -L 3000:localhost:3000 <your_vps_user>@<your_vps_ip>`
-2. Download & install wireguard and wg-quick
-3. Download & install node 10
-4. Download and unzip the dashboard
-5. Set `net.ipv4.ip_forward=1` in sysctl
-6. Install CoreDNS (needed for DNS over TLS)
-7. Put CoreDNS in autostart
-8. Optional: Enable ufw and forward port 22 and the desired port of the wireguard instance
-9. Put the dashboard in autostart
-10. Start the dashboard service
-11. Enjoy
 
 ## Features
 
