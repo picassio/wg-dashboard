@@ -170,7 +170,8 @@ systemctl enable coredns
 # start coredns
 systemctl start coredns
 
-
+interface=`ip route | grep default | cut -d ' ' -f 5`
+ip=`ifconfig $interface | grep inet | head -n 1 | xargs | cut -d ' ' -f 2`
 echo ""
 echo ""
 echo "=========================================================================="
@@ -178,5 +179,5 @@ echo ""
 echo "> Done! WireGuard and wg-dashboard have been successfully installed"
 echo "> You can now connect to the dashboard via ssh tunnel by visiting:"
 echo ""
-echo -e "\t\thttp://your_vps_ip:3000"
+echo -e "\t\thttp://$ip:3000"
 echo ""
