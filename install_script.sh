@@ -76,7 +76,7 @@ cd /opt
 rm -rf wg-dashboard
 rm -rf wg-dashboard.tar.gz
 # download wg-dashboard latest release
-curl -L https://github.com/$(wget https://github.com/picassio/wg-dashboard/releases/tag/v0.21.1 -O - | egrep '/.*/.*/.*tar.gz' -o) --output wg-dashboard.tar.gz
+curl -L https://github.com/$(wget https://github.com/picassio/wg-dashboard/releases/latest -O - | egrep '/.*/.*/.*tar.gz' -o) --output wg-dashboard.tar.gz
 # create directory for dashboard
 mkdir -p wg-dashboard
 # unzip wg-dashboard
